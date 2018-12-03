@@ -11,7 +11,7 @@ def create_sample_db_entry(api_endpoint, payload):
         url, data=json.dumps(payload),
         headers={'Content-Type': 'application/vnd.api+json',
                  'Accept' : 'application/vnd.api+json'})
-    print r.text
+    # print(r.text
 
 def create_db():
     db.create_all()
@@ -26,7 +26,7 @@ def test_db():
     r = requests.get(url,
         headers={'Content-Type': 'application/vnd.api+json',
                  'Accept' : 'application/vnd.api+json'})
-    print r.text
+    # print r.text
     return
 
 
@@ -42,11 +42,11 @@ def main():
     if args.command == 'create_db':
         create_db()
 
-        print "DB created!"
+        # print "DB created!"
     elif args.command == 'delete_db':
         drop_db()
 
-        print "DB deleted!"
+        # print "DB deleted!"
     elif args.command == 'seed_db' and args.seedfile:
         with open(args.seedfile, 'r') as f:
             seed_data = json.loads(f.read())
@@ -56,7 +56,7 @@ def main():
             for item in items:
                 create_sample_db_entry('api/' + item_class, item)
 
-        print "\nSample data added to database!"
+        # print "\nSample data added to database!"
     elif args.command == 'test':
         test_db()
     else:
