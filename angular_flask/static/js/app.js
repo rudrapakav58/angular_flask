@@ -8,15 +8,15 @@ angular.module('AngularFlask', ['ngRoute', 'angularFlaskServices'])
 			templateUrl: 'static/partials/landing.html',
 			controller: IndexController
 		})
-		.when('/about', {
+		.when('/login', {
 			templateUrl: 'static/partials/about.html',
 			controller: AboutController
 		})
-		.when('/post', {
+		.when('/pos', {
 			templateUrl: 'static/partials/post-list.html',
 			controller: PostListController
 		})
-		.when('/post/:postId', {
+		.when('/pos/:postId', {
 			templateUrl: '/static/partials/post-detail.html',
 			controller: PostDetailController
 		})
